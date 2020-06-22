@@ -1,7 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {withRouter} from 'react-router-dom'
-import secrets from '../../secrets'
-
 import algoliasearch from 'algoliasearch'
 import {
   connectStateResults,
@@ -11,6 +9,8 @@ import {
   SearchBox
 } from 'react-instantsearch-dom'
 import Rating from '@material-ui/lab/Rating'
+
+import secrets from '../../secrets'
 
 const searchClient = algoliasearch(
   secrets.ALGOLIA_CLIENT_ID,
@@ -70,8 +70,14 @@ const StateResults = ({searchResults}) => {
 const CustomStateResults = connectStateResults(StateResults)
 
 export const Search = props => {
+  const [query, setQuery] = useState(``)
+
   return (
-    <InstantSearch searchClient={searchClient} indexName="products_NAME">
+    <InstantSearch
+      searchClient={searchClient}
+      indexName="products_NAME"
+      onSearchStateChange={({query}) => setQuery(query)}
+    >
       <Header />
       <div className="search-body-top">
         <div>

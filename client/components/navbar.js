@@ -4,13 +4,8 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
-import MenuIcon from '@material-ui/icons/Menu'
-import CloseIcon from '@material-ui/icons/Close'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import Divider from '@material-ui/core/Divider'
-import Drawer from '@material-ui/core/Drawer'
+import {CloseIcon, MenuIcon} from '@material-ui/icons'
+import {Divider, Drawer, List, ListItem, ListItemText} from '@material-ui/core'
 
 const Navbar = ({isAdmin}) => {
   const [openDrawer, setOpenDrawer] = useState(false)

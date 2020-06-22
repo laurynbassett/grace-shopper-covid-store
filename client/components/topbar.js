@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import Badge from '@material-ui/core/Badge'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import {logout, fetchCart} from '../store'
-import {SearchBar, CartPreview} from '.'
+import {CartPreview} from '.'
 import history from '../history'
 
 class TopBar extends Component {
@@ -57,11 +57,9 @@ class TopBar extends Component {
       return (
         <div className="top-bar">
           <div className="top-bar-left">
-            <SearchBar
-              handleChange={this.handleChange}
-              handleSubmit={this.handleSubmit}
-              query={this.state.query}
-            />
+            <form>
+              <input type="text" />
+            </form>
           </div>
           {isLoggedIn ? (
             <div className="top-bar-right">
