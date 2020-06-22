@@ -1,4 +1,4 @@
-# COVID STORE
+# Covid Store
 
 _Ecommerce Website_
 
